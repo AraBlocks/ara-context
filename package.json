@@ -1,0 +1,22 @@
+{
+  "name": "ara-context",
+  "version": "1.0.0",
+  "description": "ARA context to encapsulate things like Web3, etc",
+  "main": "index.js",
+  "scripts": {
+    "test": ":"
+  },
+  "keywords": [
+    "ara",
+    "core",
+    "context",
+    "api",
+    "web3"
+  ],
+  "author": "Joseph Werle <werle@littlstar.com>",
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "ara-runtime-configuration": "github:arablocks/ara-runtime-configuration",
+    "web3": "^1.0.0-beta.34"
+  }
+}
