@@ -4,7 +4,7 @@
   "description": "ARA context to encapsulate things like Web3, etc",
   "main": "index.js",
   "scripts": {
-    "test": ":"
+    "test": "ava test"
   },
   "keywords": [
     "ara",
@@ -18,5 +18,8 @@
   "dependencies": {
     "ara-runtime-configuration": "github:arablocks/ara-runtime-configuration",
     "web3": "^1.0.0-beta.34"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
   }
 }

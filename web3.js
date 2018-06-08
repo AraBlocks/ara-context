@@ -27,7 +27,7 @@ function load(opts) {
 
   if ('string' != typeof opts.provider && 'object' != typeof opts.provider) {
     throw new TypeError(
-      "ara-contex.web3: Expecting provider to be a string or object.")
+      "ara-context.web3: Expecting provider to be a string or object.")
   }
 
   return new Web3(opts.provider)
