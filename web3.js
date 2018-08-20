@@ -15,7 +15,7 @@ const rc = require('ara-runtime-configuration')()
  * @throws TypeError
  */
 function load(opts) {
-  if (null === opts || (opts && 'object' !== typeof opts)) {
+  if (null === opts || (undefined !== opts && 'object' !== typeof opts)) {
     throw new TypeError('Expecting options to be an object.')
   } else if ('object' !== typeof opts) {
     // eslint-disable-next-line no-param-reassign
@@ -27,6 +27,10 @@ function load(opts) {
       // eslint-disable-next-line no-param-reassign
       opts.provider = rc.web3.provider
     }
+  }
+
+  if (!opts.provider) {
+    throw new TypeError('Unable to resolve a Web3 provider.')
   }
 
   return new Web3(provider(opts.provider))
