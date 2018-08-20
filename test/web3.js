@@ -1,62 +1,38 @@
-'use strict'
+const { load } = require('../web3')
+const test = require('ava')
 
-const { test } = require('ava')
-const context = require('../')
-const sinon = require('sinon')
-const Web3 = require('web3')
-
-let spy = sinon.spy(Web3)
-
-test("Load context: No opts", (t) => {
-  t.plan(1)
-
-  const { web3 } = context()
-
-  t.true(web3 instanceof Web3)
+test.cb('web3.load(opts) is a function', (t) => {
+  t.true('function' === typeof load)
+  t.end()
 })
 
-test("Load context: No web3 opts", (t) => {
-  t.plan(1)
-
-  const { web3 } = context({ notWeb3: {} })
-
-  t.true(web3 instanceof Web3)
+test.cb('web3.load(opts) throws on bad input', (t) => {
+  t.throws(() => load(null), TypeError)
+  t.throws(() => load(true), TypeError)
+  t.throws(() => load(1234), TypeError)
+  t.throws(() => load('string'), TypeError)
+  t.throws(() => load(() => {}), TypeError)
+  t.end()
 })
 
-test("Load context: Invalid opts", (t) => {
-  t.plan(1)
+test.cb('web3.load(opts) returns a Web3 instance', (t) => {
+  const opts = {}
+  let web3 = null
 
-  const { web3 } = context({ notWeb3: {} })
+  web3 = load()
+  t.true(null !== web3 && 'object' === typeof web3)
 
-  t.true(web3 instanceof Web3)
+  web3 = load({ provider: null })
+  t.true(null !== web3 && 'object' === typeof web3)
+
+  web3 = load({ provider: undefined })
+  t.true(null !== web3 && 'object' === typeof web3)
+
+  web3 = load({ provider: 'ws://localhost:1234' })
+  t.true(null !== web3 && 'object' === typeof web3)
+
+  web3 = load(opts)
+  t.true(null !== web3 && 'object' === typeof web3)
+
+  t.end()
 })
-
-test("Load context: No provider", (t) => {
-  t.plan(1)
-
-  const { web3 } = context({ web3: {} })
-
-  t.true(web3 instanceof Web3)
-})
-
-test("Load context: Invalid provider", (t) => {
-  t.plan(1)
-
-  t.throws(() => {
-    context({
-      web3: {
-        provider: 1
-      }
-    })
-  }, TypeError)
-})
-
-test("Load context: Valid provider", (t) => {
-  t.plan(2)
-
-  const { web3 } = context({ web3: { provider: 'ws://localhost:8546' } })
-
-  t.true(web3 instanceof Web3)
-  t.is(web3.currentProvider.connection._url, 'ws://localhost:8546')
-})
-
