@@ -1,5 +1,6 @@
 const { load } = require('../web3')
 const test = require('ava')
+const rc = require('ara-runtime-configuration')()
 
 test.cb('web3.load(opts) is a function', (t) => {
   t.true('function' === typeof load)
@@ -12,7 +13,9 @@ test.cb('web3.load(opts) throws on bad input', (t) => {
   t.throws(() => load(1234), TypeError)
   t.throws(() => load('string'), TypeError)
   t.throws(() => load(() => {}), TypeError)
-  t.throws(() => load({ provider: null }), TypeError)
+  if (!rc.web3 || !rc.web3.provider) {
+    t.throws(() => load({ provider: null }), TypeError)
+  }
   t.end()
 })
 
