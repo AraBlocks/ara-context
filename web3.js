@@ -1,5 +1,4 @@
-'use strict'
-
+const provider = require('eth-provider')
 const Web3 = require('web3')
 const rc = require('ara-runtime-configuration')()
 
@@ -8,6 +7,7 @@ const rc = require('ara-runtime-configuration')()
  * provider. This function will attempt to resolve
  * a provider from the ara-runtime-configuration'
  * `ararc' file if one is not given.
+ *
  * @public
  * @param {?(Object)} opts
  * @param {?(String|Object)} opts.provider
@@ -15,22 +15,21 @@ const rc = require('ara-runtime-configuration')()
  * @throws TypeError
  */
 function load(opts) {
-  if (null == opts || 'object' != typeof opts) {
+  if (null === opts || (opts && 'object' !== typeof opts)) {
+    throw new TypeError('Expecting options to be an object.')
+  } else if ('object' !== typeof opts) {
+    // eslint-disable-next-line no-param-reassign
     opts = {}
   }
 
-  if (null == opts.provider) {
+  if (!opts.provider) {
     if (rc.web3 && rc.web3.provider) {
+      // eslint-disable-next-line no-param-reassign
       opts.provider = rc.web3.provider
     }
   }
 
-  if ('string' != typeof opts.provider && 'object' != typeof opts.provider) {
-    throw new TypeError(
-      "ara-context.web3: Expecting provider to be a string or object.")
-  }
-
-  return new Web3(opts.provider)
+  return new Web3(provider(opts.provider))
 }
 
 module.exports = {
