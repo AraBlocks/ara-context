@@ -16,15 +16,8 @@ test.cb('context(opts) throws on bad input', (t) => {
 })
 
 test.cb('context(opts) returns an object', (t) => {
-  const ctx = context()
+  const ctx = context({ web3: { provider: 'ws://localhost:8454' } })
   t.true(null !== ctx)
   t.true('object' === typeof ctx)
-  t.end()
-})
-
-test.cb('context(opts) returns a context object', (t) => {
-  const ctx = context()
-  t.true(null !== ctx.web3)
-  t.true('object' === typeof ctx.web3)
   t.end()
 })
