@@ -1,7 +1,13 @@
-ara-context
+<img src="https://github.com/arablocks/ara-module-template/blob/master/ara.png" width="30" height="30" /> ara-context
 ===========
 
-ARA context to encapsulate things like Web3, etc
+[![Build Status](https://travis-ci.com/AraBlocks/ara-context.svg?token=6WjTyCg41y8MBmCzro5x&branch=master)](https://travis-ci.com/AraBlocks/ara-context)
+
+Ara context to encapsulate things like Web3, etc.
+
+## Status
+
+**Stable**
 
 ## Installation
 
@@ -23,6 +29,18 @@ where `opts` can be:
 
 * `opts.web3` - An object of options for configuring `Web3`
 * `opts.web3.provider` - A `Web3` provider or URI for a provider (`http`, `ws`, etc)
+
+## Contributing
+
+- [Commit message format](/.github/COMMIT_FORMAT.md)
+- [Commit message examples](/.github/COMMIT_FORMAT_EXAMPLES.md)
+- [How to contribute](/.github/CONTRIBUTING.md)
+
+Releases follow [Semantic Versioning](https://semver.org/)
+
+## See Also
+
+* [context](https://goo.gl/MdvPRz)
 
 ## License
 
