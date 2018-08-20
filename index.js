@@ -12,7 +12,7 @@ module.exports = context
  * @return {Object}
  */
 function context(opts) {
-  if (null === opts || (opts && 'object' !== typeof opts)) {
+  if (null === opts || (undefined !== opts && 'object' !== typeof opts)) {
     throw new TypeError('Expecting options to be an object.')
   } else if ('object' !== typeof opts) {
     // eslint-disable-next-line no-param-reassign
