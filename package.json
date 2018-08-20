@@ -4,7 +4,8 @@
   "description": "ARA context to encapsulate things like Web3, etc",
   "main": "index.js",
   "scripts": {
-    "test": ":",
+    "test": "ava test",
+    "nyc": "nyc npm test",
     "lint": "eslint .",
     "lint-fix": "eslint --fix ."
   },
@@ -19,11 +20,13 @@
   "license": "LGPL-3.0",
   "dependencies": {
     "ara-runtime-configuration": "github:arablocks/ara-runtime-configuration",
+    "eth-provider": "0.0.10",
     "web3": "^1.0.0-beta.34"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-littlstar": "github:littlstar/eslint-config-littlstar",
-    "eslint-plugin-import": "^2.12.0"
+    "ava": "^0.25.0",
+    "eslint": "^5.4.0",
+    "eslint-config-ara": "github:arablocks/eslint-config-ara",
+    "nyc": "^12.0.2"
   }
 }
