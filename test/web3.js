@@ -12,26 +12,14 @@ test.cb('web3.load(opts) throws on bad input', (t) => {
   t.throws(() => load(1234), TypeError)
   t.throws(() => load('string'), TypeError)
   t.throws(() => load(() => {}), TypeError)
+  t.throws(() => load({ provider: null }), TypeError)
   t.end()
 })
 
 test.cb('web3.load(opts) returns a Web3 instance', (t) => {
-  const opts = {}
   let web3 = null
 
-  web3 = load()
-  t.true(null !== web3 && 'object' === typeof web3)
-
-  web3 = load({ provider: null })
-  t.true(null !== web3 && 'object' === typeof web3)
-
-  web3 = load({ provider: undefined })
-  t.true(null !== web3 && 'object' === typeof web3)
-
-  web3 = load({ provider: 'ws://localhost:1234' })
-  t.true(null !== web3 && 'object' === typeof web3)
-
-  web3 = load(opts)
+  web3 = load({ provider: 'wss://localhost:8454' })
   t.true(null !== web3 && 'object' === typeof web3)
 
   t.end()
