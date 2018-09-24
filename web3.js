@@ -22,6 +22,7 @@ function load(opts) {
     opts = {}
   }
 
+  console.log("RC:", rc)
   if (!opts.provider) {
     if (rc.web3 && rc.web3.provider) {
       // eslint-disable-next-line no-param-reassign
