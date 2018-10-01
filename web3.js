@@ -22,11 +22,9 @@ function load(opts) {
     opts = {}
   }
 
-  if (!opts.provider) {
-    if (rc.web3 && rc.web3.provider) {
-      // eslint-disable-next-line no-param-reassign
-      opts.provider = rc.web3.provider
-    }
+  if (!opts.provider && rc.geth) {
+    // eslint-disable-next-line no-param-reassign
+    opts.provider = Object.values(rc.geth).find(k => k.provider) || {}
   }
 
   if (!opts.provider) {
