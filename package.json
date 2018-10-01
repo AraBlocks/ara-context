@@ -27,6 +27,7 @@
     "ava": "^0.25.0",
     "eslint": "^5.4.0",
     "eslint-config-ara": "github:arablocks/eslint-config-ara",
+    "eslint-plugin-import": "^2.14.0",
     "nyc": "^12.0.2"
   }
 }
