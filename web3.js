@@ -22,9 +22,9 @@ function load(opts) {
     opts = {}
   }
 
-  if (!opts.provider && rc.geth) {
+  if (!opts.provider) {
     // eslint-disable-next-line no-param-reassign
-    opts.provider = Object.values(rc.geth).find(k => k.provider) || {}
+    opts.provider = getProvider(rc.web3)
   }
 
   if (!opts.provider) {
@@ -34,6 +34,20 @@ function load(opts) {
   return new Web3(provider(opts.provider))
 }
 
+/**
+ * Returns the provider(s) based on .ararc network id.
+ * @param  {Object} web3
+ * @return {String|Array}
+ */
+function getProvider(web3) {
+  const { network_id } = web3
+  if (network_id && web3[network_id]) {
+    return web3[network_id].providers
+  }
+  return web3.provider
+}
+
 module.exports = {
+  getProvider,
   load
 }

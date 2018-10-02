@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+
+const { info, warn, error } = require('ara-console')
+const rc = require('ara-runtime-configuration')
+const { getProvider } = require('../web3')
+const program = require('yargs')
+const pify = require('pify')
+const ini = require('ini')
+const fs = require('fs')
+
+process.on('unhandledRejection', onfatal)
+process.on('uncaughtException', onfatal)
+
+const { argv } = program
+  .usage("usage: $0 [-hDV] [options] <command> [options]")
+  .option('help', {
+    alias: 'h',
+    describe: "Show this help message"
+  })
+  .option('version', {
+    alias: 'V',
+    describe: "Show program version"
+  })
+  .command('provider', "Get the current provider", (program) => { 
+    program
+      .option('network', {
+        alias: 'N',
+        describe: "Changes .ararc current network"
+      })
+  }, ongetprovider)
+
+async function ongetprovider({ network }) {
+  if (network) {
+    await switchNetwork(network)
+  }
+  const { web3 } = rc()
+  if (web3.network_id) {
+    info("network:", web3.network_id)
+  }
+  info("currentProvider(s):", getProvider(web3))
+}
+
+async function switchNetwork(network) {
+  const { web3, config } = rc()
+  if (!web3[network]) {
+    onfatal(new Error(`Network id ${network} not provided in .ararc`))
+  }
+
+  try {
+    const contents = await pify(fs.readFile)(config, 'utf8')
+    const ararc = ini.parse(contents)
+    ararc.web3.network_id = network
+    await pify(fs.writeFile)(config, ini.stringify(ararc))
+  } catch (err) {
+    onfatal(err)
+  }
+}
+
+function onfatal(err) {
+  if (err) {
+    error("fatal:", err.message)
+  }
+  process.exit(1)
+}
