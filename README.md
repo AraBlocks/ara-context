@@ -29,6 +29,7 @@ where `opts` can be:
 
 * `opts.web3` - An object of options for configuring `Web3`
 * `opts.web3.provider` - A `Web3` provider or URI for a provider (`http`, `ws`, etc)
+* `opts.web3.[id].providers` - Array of network providers, where `id` is a string representation of the network/chain id
 
 ## Contributing
 
