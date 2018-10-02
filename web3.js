@@ -50,6 +50,5 @@ function getProvider(web3) {
 }
 
 module.exports = {
-  getProvider,
   load
 }
