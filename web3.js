@@ -44,7 +44,7 @@ function load(opts) {
 function getProvider(web3) {
   const { network_id } = web3
   if (network_id && web3[network_id]) {
-    return web3[network_id].providers
+    return web3[network_id].provider
   }
   return web3.provider
 }
