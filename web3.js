@@ -23,8 +23,10 @@ function load(opts) {
   }
 
   if (!opts.provider) {
-    // eslint-disable-next-line no-param-reassign
-    opts.provider = getProvider(rc.web3)
+    if (rc.web3 && rc.web3.provider) {
+      // eslint-disable-next-line no-param-reassign
+      opts.provider = getProvider(rc.web3)
+    }
   }
 
   if (!opts.provider) {
