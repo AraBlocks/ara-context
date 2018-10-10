@@ -18,16 +18,18 @@ function load(opts) {
   if (null === opts || (undefined !== opts && 'object' !== typeof opts)) {
     throw new TypeError('Expecting options to be an object.')
   } else if ('object' !== typeof opts) {
-    // eslint-disable-next-line no-param-reassign
+    // eslint-disable no-param-reassign
     opts = {}
   }
-
   if (!opts.provider) {
     if (rc.web3 && rc.web3.provider) {
-      // eslint-disable-next-line no-param-reassign
+      opts.provider = rc.web3.provider
+    }
+    if (rc.web3 && rc.web3.network_id) {
       opts.provider = getProvider(rc.web3)
     }
   }
+  // eslint-enable no-param-reassign
 
   if (!opts.provider) {
     throw new TypeError('Unable to resolve a Web3 provider.')
