@@ -38,6 +38,10 @@ function load(opts) {
   return new Web3(provider(opts.provider))
 }
 
+function api() {
+  return Web3
+}
+
 /**
  * Returns the provider(s) based on .ararc network id.
  * @param  {Object} web3
@@ -52,5 +56,6 @@ function getProvider(web3) {
 }
 
 module.exports = {
-  load
+  load,
+  api
 }

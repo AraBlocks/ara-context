@@ -22,8 +22,8 @@
   "license": "LGPL-3.0",
   "dependencies": {
     "ara-runtime-configuration": "github:arablocks/ara-runtime-configuration#semver:0.6.x",
-    "eth-provider": "0.0.10",
-    "web3": "^1.0.0-beta.34"
+    "eth-provider": "0.1.3",
+    "web3": "^1.0.0-beta.36"
   },
   "devDependencies": {
     "ava": "^0.25.0",
