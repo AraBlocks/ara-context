@@ -2,8 +2,7 @@ const web3 = require('./web3')
 const events = require('events').EventEmitter
 
 module.exports = context
-
-let CtxCache
+console.log('in ara-context index')
 
 /**
  * Creates an ARA context that wraps useful
@@ -27,11 +26,8 @@ function context(opts) {
   let ctx = new events.EventEmitter()
   if (loadProvider) {
     ctx.web3 = web3.load(opts.web3)
-    // CtxCache = ctx
 
-    ctx.web3.currentProvider.connection.once('connect', () => {
-      // console.log('emit ready')
-      // console.log(ctx.web3.currentProvider.connection)
+    ctx.web3.currentProvider.once('connect', () => {
       ctx.emit('ready')
     })
   } else {
@@ -40,7 +36,6 @@ function context(opts) {
 
   ctx.close = () => {
     if (ctx.web3) {
-      // console.log(ctx.web3.currentProvider.connection)
       ctx.web3.currentProvider.connection.close()
     }
   }
