@@ -2,7 +2,6 @@ const web3 = require('./web3')
 const events = require('events').EventEmitter
 
 module.exports = context
-console.log('in ara-context index')
 
 /**
  * Creates an ARA context that wraps useful
@@ -35,7 +34,7 @@ function context(opts) {
   }
 
   ctx.close = () => {
-    if (ctx.web3) {
+    if (ctx.web3 && ctx.web3.currentProvider && ctx.web3.currentProvider.connection) {
       ctx.web3.currentProvider.connection.close()
     }
   }
