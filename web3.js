@@ -34,7 +34,6 @@ function load(opts) {
   if (!opts.provider) {
     throw new TypeError('Unable to resolve a Web3 provider.')
   }
-  console.log('OPENED')
   return new Web3(provider(opts.provider))
 }
 
