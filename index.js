@@ -22,7 +22,7 @@ function context(opts) {
 
   const { loadProvider = true } = opts
 
-  let ctx = new events.EventEmitter()
+  const ctx = new events.EventEmitter()
   if (loadProvider) {
     ctx.web3 = web3.load(opts.web3)
 
