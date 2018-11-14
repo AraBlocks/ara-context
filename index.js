@@ -1,5 +1,4 @@
 const web3 = require('./web3')
-const events = require('events').EventEmitter
 const pify = require('pify')
 const thunky = require('thunky')
 
