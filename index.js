@@ -41,7 +41,7 @@ function context(opts) {
     }
   }
 
-  ctx.ready = pify(thunky(async (done) => {
+  ctx.ready = pify(thunky((done) => {
     if (ctx.web3 && ctx.web3.currentProvider) {
       ctx.web3.currentProvider.once('connect', () => {
         done()
