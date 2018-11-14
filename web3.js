@@ -22,6 +22,9 @@ function load(opts) {
     opts = {}
   }
   if (!opts.provider) {
+    if (false === opts.provider) {
+      return new Web3()
+    }
     if (rc.web3 && rc.web3.provider) {
       opts.provider = rc.web3.provider
     }
@@ -35,10 +38,6 @@ function load(opts) {
     throw new TypeError('Unable to resolve a Web3 provider.')
   }
   return new Web3(provider(opts.provider))
-}
-
-function api() {
-  return new Web3()
 }
 
 /**
@@ -55,6 +54,5 @@ function getProvider(web3) {
 }
 
 module.exports = {
-  load,
-  api
+  load
 }
