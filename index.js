@@ -1,5 +1,7 @@
 const web3 = require('./web3')
 const events = require('events').EventEmitter
+const pify = require('pify')
+const thunky = require('thunky')
 
 module.exports = context
 
@@ -20,17 +22,18 @@ function context(opts) {
     opts = {}
   }
 
-  const { loadProvider = true } = opts
+  if (false === opts.provider) {
+    if (opts.web3) {
+      opts.web3.provider = false
+    } else {
+      opts.web3 = {
+        provider: false
+      }
+    }
+  }
 
-  const ctx = new events.EventEmitter()
-  if (loadProvider) {
-    ctx.web3 = web3.load(opts.web3)
-
-    ctx.web3.currentProvider.once('connect', () => {
-      ctx.emit('ready')
-    })
-  } else {
-    ctx.web3 = web3.api()
+  const ctx = {
+    web3: web3.load(opts.web3)
   }
 
   ctx.close = () => {
@@ -38,6 +41,14 @@ function context(opts) {
       ctx.web3.currentProvider.connection.close()
     }
   }
+
+  ctx.ready = pify(thunky(async (done) => {
+    if (ctx.web3 && ctx.web3.currentProvider) {
+      ctx.web3.currentProvider.once('connect', () => {
+        done()
+      })
+    }
+  }))
 
   return ctx
 }
