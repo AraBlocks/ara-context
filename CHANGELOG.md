@@ -1,17 +1,19 @@
-# [0.5.0](https://github.com/AraBlocks/ara-context/compare/0.4.0...0.5.0) (2018-11-14)
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/AraBlocks/ara-context/compare/0.4.0...0.5.1) (2018-11-29)
 
 
 ### Bug Fixes
 
-* add more checks ([eecd127](https://github.com/AraBlocks/ara-context/commit/eecd127))
-* lint ([5959419](https://github.com/AraBlocks/ara-context/commit/5959419))
-* listen to provider connect event ([69d368d](https://github.com/AraBlocks/ara-context/commit/69d368d))
-* remove async keyword ([05b3018](https://github.com/AraBlocks/ara-context/commit/05b3018))
-* remove unnecessary require ([b7859a8](https://github.com/AraBlocks/ara-context/commit/b7859a8))
-* seems to be working ([840ab61](https://github.com/AraBlocks/ara-context/commit/840ab61))
+* add more checks ([381a012](https://github.com/AraBlocks/ara-context/commit/381a012))
+* lint ([f9e1323](https://github.com/AraBlocks/ara-context/commit/f9e1323))
+* listen to provider connect event ([4bc9f5c](https://github.com/AraBlocks/ara-context/commit/4bc9f5c))
+* remove async keyword ([381cd7e](https://github.com/AraBlocks/ara-context/commit/381cd7e))
+* remove unnecessary require ([e5a7316](https://github.com/AraBlocks/ara-context/commit/e5a7316))
+* seems to be working ([03b13ae](https://github.com/AraBlocks/ara-context/commit/03b13ae))
 
 
 
+<a name="0.4.0"></a>
 # [0.4.0](https://github.com/AraBlocks/ara-context/compare/0.3.0...0.4.0) (2018-10-15)
 
 
@@ -21,6 +23,7 @@
 
 
 
+<a name="0.3.0"></a>
 # [0.3.0](https://github.com/AraBlocks/ara-context/compare/0.1.0...0.3.0) (2018-10-02)
 
 
@@ -39,6 +42,7 @@
 
 
 
+<a name="0.1.0"></a>
 # [0.1.0](https://github.com/AraBlocks/ara-context/compare/e5580d0...0.1.0) (2018-05-22)
 
 

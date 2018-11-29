@@ -1,6 +1,6 @@
 {
   "name": "ara-context",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "ARA context to encapsulate things like Web3, etc",
   "main": "index.js",
   "scripts": {
