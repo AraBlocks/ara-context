@@ -1,4 +1,14 @@
-<a name="0.5.1"></a>
+## [0.5.2](https://github.com/AraBlocks/ara-context/compare/0.5.1...0.5.2) (2019-01-07)
+
+
+### Bug Fixes
+
+* add timeout for awaiting provider ([857fc1f](https://github.com/AraBlocks/ara-context/commit/857fc1f))
+* change provider timeout to constant ([a9163e2](https://github.com/AraBlocks/ara-context/commit/a9163e2))
+* lint ([731a113](https://github.com/AraBlocks/ara-context/commit/731a113))
+
+
+
 ## [0.5.1](https://github.com/AraBlocks/ara-context/compare/0.4.0...0.5.1) (2018-11-29)
 
 
@@ -13,7 +23,6 @@
 
 
 
-<a name="0.4.0"></a>
 # [0.4.0](https://github.com/AraBlocks/ara-context/compare/0.3.0...0.4.0) (2018-10-15)
 
 
@@ -23,7 +32,6 @@
 
 
 
-<a name="0.3.0"></a>
 # [0.3.0](https://github.com/AraBlocks/ara-context/compare/0.1.0...0.3.0) (2018-10-02)
 
 
@@ -42,7 +50,6 @@
 
 
 
-<a name="0.1.0"></a>
 # [0.1.0](https://github.com/AraBlocks/ara-context/compare/e5580d0...0.1.0) (2018-05-22)
 
 
