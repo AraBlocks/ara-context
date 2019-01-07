@@ -2,6 +2,8 @@ const web3 = require('./web3')
 const pify = require('pify')
 const thunky = require('thunky')
 
+const PROVIDER_TIMEOUT = 3000
+
 module.exports = context
 
 /**
@@ -48,7 +50,7 @@ function context(opts) {
         ctx.close()
         done(new Error('Could not connect to a provider.'))
       }
-    }, 3000)
+    }, PROVIDER_TIMEOUT)
     if (ctx.web3 && ctx.web3.currentProvider) {
       ctx.web3.currentProvider.once('connect', () => {
         connected = true
