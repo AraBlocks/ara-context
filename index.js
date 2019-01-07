@@ -42,8 +42,16 @@ function context(opts) {
   }
 
   ctx.ready = pify(thunky((done) => {
+    let connected = false
+    setTimeout(function() {
+      if (!connected) {
+        ctx.close()
+        done(new Error('Could not connect to a provider.'))
+      }
+    }, 3000)
     if (ctx.web3 && ctx.web3.currentProvider) {
       ctx.web3.currentProvider.once('connect', () => {
+        connected = true
         done()
       })
     }
