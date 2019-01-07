@@ -43,7 +43,7 @@ function context(opts) {
 
   ctx.ready = pify(thunky((done) => {
     let connected = false
-    setTimeout(function() {
+    setTimeout(() => {
       if (!connected) {
         ctx.close()
         done(new Error('Could not connect to a provider.'))
