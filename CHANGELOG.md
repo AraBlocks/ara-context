@@ -1,11 +1,12 @@
-## [0.5.2](https://github.com/AraBlocks/ara-context/compare/0.5.1...0.5.2) (2019-01-07)
+## [0.5.3](https://github.com/AraBlocks/ara-context/compare/0.5.1...0.5.3) (2019-01-29)
 
 
 ### Bug Fixes
 
-* add timeout for awaiting provider ([857fc1f](https://github.com/AraBlocks/ara-context/commit/857fc1f))
-* change provider timeout to constant ([a9163e2](https://github.com/AraBlocks/ara-context/commit/a9163e2))
-* lint ([731a113](https://github.com/AraBlocks/ara-context/commit/731a113))
+* add timeout for awaiting provider ([3c1afe0](https://github.com/AraBlocks/ara-context/commit/3c1afe0))
+* change provider timeout to constant ([eec6840](https://github.com/AraBlocks/ara-context/commit/eec6840))
+* lint ([b3bd44e](https://github.com/AraBlocks/ara-context/commit/b3bd44e))
+* **package.json:** Hardcoded web3 at 1.0.0-beta.37 ([4b4bdd3](https://github.com/AraBlocks/ara-context/commit/4b4bdd3))
 
 
 
