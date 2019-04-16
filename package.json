@@ -25,7 +25,7 @@
     "eth-provider": "0.2.2",
     "pify": "^4.0.1",
     "thunky": "^1.0.3",
-    "web3": "^1.0.0-beta.37"
+    "web3": "^1.0.0-beta.52"
   },
   "devDependencies": {
     "ava": "^1.4.1",
