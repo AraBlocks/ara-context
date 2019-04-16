@@ -22,17 +22,17 @@
   "license": "LGPL-3.0",
   "dependencies": {
     "ara-runtime-configuration": "^1.3.2",
-    "eth-provider": "0.2.1",
+    "eth-provider": "0.2.2",
     "pify": "^4.0.1",
     "thunky": "^1.0.3",
-    "web3": "1.0.0-beta.37"
+    "web3": "1.0.0-beta.52"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^1.4.1",
     "conventional-changelog-cli": "^2.0.5",
     "eslint": "^5.4.0",
     "eslint-config-ara": "github:arablocks/eslint-config-ara#semver:2.1.x",
     "eslint-plugin-import": "^2.14.0",
-    "nyc": "^12.0.2"
+    "nyc": "^14.0.0"
   }
 }
