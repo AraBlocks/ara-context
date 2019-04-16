@@ -1,3 +1,7 @@
+# [0.6.0](https://github.com/arablocks/ara-context/compare/0.5.7...0.6.0) (2019-04-16)
+
+
+
 ## [0.5.7](https://github.com/arablocks/ara-context/compare/0.5.6...0.5.7) (2019-04-16)
 
 
