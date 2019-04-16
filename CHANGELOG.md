@@ -1,3 +1,12 @@
+## [0.5.7](https://github.com/arablocks/ara-context/compare/0.5.6...0.5.7) (2019-04-16)
+
+
+### Bug Fixes
+
+* **package.json:** Downgrade web3 ([6a0f7ff](https://github.com/arablocks/ara-context/commit/6a0f7ff))
+
+
+
 ## [0.5.6](https://github.com/arablocks/ara-context/compare/0.5.4...0.5.6) (2019-04-16)
 
 
