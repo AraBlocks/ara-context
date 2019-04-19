@@ -1,3 +1,12 @@
+## [0.6.2](https://github.com/arablocks/ara-context/compare/0.6.1...0.6.2) (2019-04-19)
+
+
+### Bug Fixes
+
+* **.:** Handle web3 changes and empty providers ([e8cc09b](https://github.com/arablocks/ara-context/commit/e8cc09b))
+
+
+
 ## [0.6.1](https://github.com/arablocks/ara-context/compare/0.6.0...0.6.1) (2019-04-19)
 
 
