@@ -51,11 +51,21 @@ function context(opts) {
         done(new Error('Could not connect to a provider.'))
       }
     }, PROVIDER_TIMEOUT)
+
     if (ctx.web3 && ctx.web3.currentProvider) {
-      ctx.web3.currentProvider.once('connect', () => {
-        connected = true
-        done()
-      })
+      if ('function' === typeof ctx.web3.currentProvider.once) {
+        ctx.web3.currentProvider.once('connect', onconnect)
+      } else if (
+        ctx.web3.currentProvider.connection &&
+        'function' === typeof ctx.web3.currentProvider.connection.once
+      ) {
+        ctx.web3.currentProvider.connection.once('connect', onconnect)
+      }
+    }
+
+    function onconnect() {
+      connected = true
+      done()
     }
   }))
 
