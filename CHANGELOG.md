@@ -1,3 +1,12 @@
+## [0.6.1](https://github.com/arablocks/ara-context/compare/0.6.0...0.6.1) (2019-04-19)
+
+
+### Bug Fixes
+
+* **index.js:** Handle backwards compat for web3 ([83589f9](https://github.com/arablocks/ara-context/commit/83589f9))
+
+
+
 # [0.6.0](https://github.com/arablocks/ara-context/compare/0.5.7...0.6.0) (2019-04-16)
 
 
