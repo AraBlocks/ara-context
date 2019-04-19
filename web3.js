@@ -21,6 +21,7 @@ function load(opts) {
     // eslint-disable no-param-reassign
     opts = {}
   }
+
   if (!opts.provider) {
     if (false === opts.provider) {
       return new Web3(provider())
@@ -32,11 +33,7 @@ function load(opts) {
       opts.provider = getProvider(rc.web3)
     }
   }
-  // eslint-enable no-param-reassign
 
-  if (!opts.provider) {
-    throw new TypeError('Unable to resolve a Web3 provider.')
-  }
   return new Web3(provider(opts.provider))
 }
 
