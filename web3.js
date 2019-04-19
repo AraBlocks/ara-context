@@ -23,7 +23,7 @@ function load(opts) {
   }
   if (!opts.provider) {
     if (false === opts.provider) {
-      return new Web3()
+      return new Web3(provider())
     }
     if (rc.web3 && rc.web3.provider) {
       opts.provider = rc.web3.provider
