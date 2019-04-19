@@ -1,3 +1,12 @@
+## [0.6.3](https://github.com/arablocks/ara-context/compare/0.6.2...0.6.3) (2019-04-19)
+
+
+### Bug Fixes
+
+* **package.json:** Match 'web3' version with 'eth-provider' ([65c94a8](https://github.com/arablocks/ara-context/commit/65c94a8))
+
+
+
 ## [0.6.2](https://github.com/arablocks/ara-context/compare/0.6.1...0.6.2) (2019-04-19)
 
 
