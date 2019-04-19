@@ -1,3 +1,12 @@
+## [0.5.8](https://github.com/arablocks/ara-context/compare/0.5.7...0.5.8) (2019-04-19)
+
+
+### Bug Fixes
+
+* **package.json:** Lock '1.0.0-beta.37' version ([55967b9](https://github.com/arablocks/ara-context/commit/55967b9))
+
+
+
 ## [0.5.7](https://github.com/arablocks/ara-context/compare/0.5.6...0.5.7) (2019-04-16)
 
 
