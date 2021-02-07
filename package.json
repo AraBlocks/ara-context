@@ -4,7 +4,7 @@
   "description": "Ara context to encapsulate things like Web3, etc",
   "main": "index.js",
   "scripts": {
-    "test": "ava test",
+    "test": "ava test/*",
     "nyc": "nyc npm test",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
