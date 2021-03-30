@@ -14,9 +14,6 @@ test.cb('web3.load(opts) throws on bad input', (t) => {
   t.throws(() => load(1234), { instanceOf: TypeError })
   t.throws(() => load('string'), { instanceOf: TypeError })
   t.throws(() => load(() => {}), { instanceOf: TypeError })
-  if (!rc.web3 || !rc.web3.provider) {
-    t.throws(() => load({ provider: null }), { instanceOf: TypeError })
-  }
   t.end()
 })
 
