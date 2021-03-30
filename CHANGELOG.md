@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/AraBlocks/ara-context/compare/1.0.0...1.0.1) (2021-03-30)
+
+
+### Bug Fixes
+
+* **test/web3.j:** fix broken test ([009ea3f](https://github.com/AraBlocks/ara-context/commit/009ea3f484972a197c3faaf733cf101b69c5125f))
+
+
+
 # [1.0.0](https://github.com/AraBlocks/ara-context/compare/0.6.4...1.0.0) (2021-03-30)
 
 
