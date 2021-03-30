@@ -1,5 +1,4 @@
 const test = require('ava')
-const rc = require('ara-runtime-configuration')()
 
 const { load } = require('../web3')
 
