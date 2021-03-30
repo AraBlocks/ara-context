@@ -4,7 +4,7 @@
   "description": "Ara context to encapsulate things like Web3, etc",
   "main": "index.js",
   "scripts": {
-    "test": "ava test/*",
+    "test": "ava test/**",
     "nyc": "nyc npm test",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
@@ -22,7 +22,7 @@
   "license": "LGPL-3.0",
   "dependencies": {
     "ara-runtime-configuration": "^1.3.2",
-    "eth-provider": "^0.5.2",
+    "eth-provider": "^0.6.0",
     "pify": "^4.0.1",
     "thunky": "^1.0.3",
     "web3": "^1.3.4"
