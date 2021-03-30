@@ -1,5 +1,6 @@
-const context = require('../')
 const test = require('ava')
+
+const context = require('..')
 
 test.cb('context(opts) is a function', (t) => {
   t.true('function' === typeof context)
@@ -7,11 +8,11 @@ test.cb('context(opts) is a function', (t) => {
 })
 
 test.cb('context(opts) throws on bad input', (t) => {
-  t.throws(() => context(null), TypeError)
-  t.throws(() => context(true), TypeError)
-  t.throws(() => context(1234), TypeError)
-  t.throws(() => context('string'), TypeError)
-  t.throws(() => context(() => {}), TypeError)
+  t.throws(() => context(null), { instanceOf: TypeError })
+  t.throws(() => context(true), { instanceOf: TypeError })
+  t.throws(() => context(1234), { instanceOf: TypeError })
+  t.throws(() => context('string'), { instanceOf: TypeError })
+  t.throws(() => context(() => {}), { instanceOf: TypeError })
   t.end()
 })
 

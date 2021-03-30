@@ -1,9 +1,7 @@
 <img src="https://github.com/arablocks/ara-module-template/blob/master/ara.png" width="30" height="30" /> ara-context
 ===========
 
-[![Build Status](https://travis-ci.com/AraBlocks/ara-context.svg?token=6WjTyCg41y8MBmCzro5x&branch=master)](https://travis-ci.com/AraBlocks/ara-context)
-
-Ara context to encapsulate things like Web3, etc.
+> Ara context to encapsulate things like Web3, etc.
 
 ## Status
 

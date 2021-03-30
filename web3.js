@@ -34,7 +34,13 @@ function load(opts) {
     }
   }
 
-  return new Web3(provider(opts.provider))
+  if (opts.provider && opts.provider.targets) {
+    const { targets, ..._opts } = opts
+    opts = _opts
+    opts.provider = targets
+  }
+
+  return new Web3(provider(opts.provider, opts))
 }
 
 /**

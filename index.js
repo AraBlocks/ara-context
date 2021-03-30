@@ -1,6 +1,7 @@
 const thunky = require('thunky')
-const web3 = require('./web3')
 const pify = require('pify')
+
+const web3 = require('./web3')
 
 const PROVIDER_TIMEOUT = 3000
 
@@ -61,8 +62,8 @@ function context(opts) {
       if ('function' === typeof ctx.web3.currentProvider.once) {
         ctx.web3.currentProvider.once('connect', onconnect)
       } else if (
-        ctx.web3.currentProvider.connection &&
-        'function' === typeof ctx.web3.currentProvider.connection.once
+        ctx.web3.currentProvider.connection
+        && 'function' === typeof ctx.web3.currentProvider.connection.once
       ) {
         ctx.web3.currentProvider.connection.once('connect', onconnect)
       }
