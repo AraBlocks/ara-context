@@ -35,7 +35,7 @@ function load(opts) {
   }
 
   if (opts.provider && opts.provider.targets) {
-    const { targets, ..._opts } = opts
+    const { targets, ..._opts } = opts.provider
     opts = _opts
     opts.provider = targets
   }
