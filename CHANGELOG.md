@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/AraBlocks/ara-context/compare/1.0.1...1.0.2) (2021-03-31)
+
+
+### Bug Fixes
+
+* **test/web3:** fix lint ([118e582](https://github.com/AraBlocks/ara-context/commit/118e582d32a83a3902b761ee12ec5b2ae38af090))
+* **web3.js:** fix typo (fixes [#16](https://github.com/AraBlocks/ara-context/issues/16)) ([521678a](https://github.com/AraBlocks/ara-context/commit/521678a263d343642bd0b0da1ce91189a7c8ccc0))
+
+
+
 ## [1.0.1](https://github.com/AraBlocks/ara-context/compare/1.0.0...1.0.1) (2021-03-30)
 
 
