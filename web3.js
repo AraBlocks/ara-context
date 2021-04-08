@@ -26,9 +26,11 @@ function load(opts) {
     if (false === opts.provider) {
       return new Web3(provider())
     }
+
     if (rc.web3 && rc.web3.provider) {
       opts.provider = rc.web3.provider
     }
+
     if (rc.web3 && rc.web3.network_id) {
       opts.provider = getProvider(rc.web3)
     }
@@ -50,9 +52,12 @@ function load(opts) {
  */
 function getProvider(web3) {
   const { network_id: networkId } = web3
+
   if (networkId && web3[networkId]) {
-    return web3[networkId].provider
+    const ctx = web3[networkId]
+    return ctx.providers || ctx.provider
   }
+
   return web3.provider
 }
 
