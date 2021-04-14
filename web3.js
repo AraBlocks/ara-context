@@ -22,6 +22,8 @@ function load(opts) {
     opts = {}
   }
 
+  opts = { ...opts }
+
   if (!opts.provider) {
     if (false === opts.provider) {
       return new Web3(provider())
@@ -42,7 +44,12 @@ function load(opts) {
     opts.provider = targets
   }
 
-  return new Web3(provider(opts.provider, opts))
+  const providers = Array.isArray(opts.provider) && 1 === opts.provider.length
+    ? opts.provider[0]
+    : opts.provider
+
+  delete opts.provider
+  return new Web3(provider(providers, opts))
 }
 
 /**

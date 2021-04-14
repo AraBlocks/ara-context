@@ -49,12 +49,22 @@ function context(opts) {
     }
   }
 
+  process.nextTick(() => {
+    if (ctx.web3.currentProvider && ctx.web3.currentProvider.connection) {
+      if ('function' === typeof ctx.web3.currentProvider.connection.connect) {
+        ctx.web3.currentProvider.connection.connect()
+      }
+    }
+  })
+
   ctx.ready = pify(thunky((done) => {
-    let connected = false
+    let connected = Boolean(ctx.web3.currentProvider.connected)
     setTimeout(() => {
       if (!connected) {
         ctx.close()
         done(new Error('Could not connect to a provider.'))
+      } else {
+        done(null)
       }
     }, PROVIDER_TIMEOUT)
 
