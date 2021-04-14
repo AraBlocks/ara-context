@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/AraBlocks/ara-context/compare/1.0.3...1.0.4) (2021-04-14)
+
+
+### Bug Fixes
+
+* connect to web3 if possible, handle testnet providers ([c7c96fa](https://github.com/AraBlocks/ara-context/commit/c7c96fa4f841d927f9985d2ff922e3710548c263))
+
+
+
 ## [1.0.3](https://github.com/AraBlocks/ara-context/compare/1.0.2...1.0.3) (2021-04-08)
 
 
