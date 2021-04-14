@@ -1,3 +1,7 @@
+## [1.0.5](https://github.com/AraBlocks/ara-context/compare/1.0.4...1.0.5) (2021-04-14)
+
+
+
 ## [1.0.4](https://github.com/AraBlocks/ara-context/compare/1.0.3...1.0.4) (2021-04-14)
 
 
